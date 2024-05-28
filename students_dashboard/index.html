@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        .nav-link {
+            cursor: pointer;
+            font-weight: 400;
+            text-transform: capitalize;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid ">
+        <div class="row">
+            <div class="col-12">
+                <h1>Excellent Community School Student Dashboard</h1>
+                <button class="btn btn-dark">Back to main site</button>
+                <nav class="navbar my-3 navbar-dark bg-dark  d-flex justify-content-between">
+                    <ul class="nav  d-flex justify-content-between">
+                       <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#!" onclick="showSection('profile')">Profile</a>
+                       </li> 
+                     <li class="nav-item">
+                        <a class="nav-link" href="#!" onclick="showSection('courses')">Courses</a>
+                     </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#!" onclick="showSection('grades')">Grades</a>
+                      </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#!" onclick="showSection('teachers')">Teachers</a>
+                     </li>
+                   <li class="nav-item">
+                    <a class="nav-link" href="#!" onclick="showSection('performanceChartSection')">Performance</a>
+                   </li>
+
+                </li>
+                <li class="nav-item">
+                 <a class="nav-link" href="#!" onclick="showSection('changePhoto')">Change Photo</a>
+                </li>
+
+                    </ul>
+                  <div>
+                    <div class="me-4 Notification" >
+                        <a href="#notification">
+                        <span class="bg-light mx-1 p-1 rounded-circle" id="Notification-icon">
+                            <i class="bi bi-bell-fill"></i>
+                        </span>
+                    </a>
+                       
+                    </div>
+                  </div>
+                </nav>
+            </div>
+        </div>
+
+        <div class="Notification-container" >
+            
+            <div class="notification-content card ">
+                <div id="notification" class="notification">
+                    <a href="#" class="close-notification">Close</a>
+                    <div class="notification-subPage">
+                        <i class="bi bi-bell-fill"></i>
+                        <h2>Notifications</h2>
+                        <h3>Notification header here..</h3>
+                        <p>Here are your notifications...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Profile Section -->
+        <div id="profile" class="card mb-3">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="images/myProfile.avif" class="img-fluid rounded-start avatar" alt="Student Avatar">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">Sara Liuon</h5>
+                        <p class="card-text">Student ID: 123456789</p>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        <button class="btn btn-danger" onclick="logout()">Logout</button>
+                        <button class="btn btn-success" id="activeBtn">ON</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Courses Section -->
+        <div id="courses" class="card mb-3" style="display: none;">
+            <div class="card-body">
+                <h5 class="card-title">Courses</h5>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Mathematics</li>
+                    <li class="list-group-item">Science</li>
+                    <li class="list-group-item">History</li>
+                    <li class="list-group-item">English Literature</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Grades Section -->
+        <div id="grades" class="card mb-3" style="display: none;">
+            <div class="card-body">
+                <h5 class="card-title">Recent Grades</h5>
+                <select id="termSelect" onchange="updateGradesDisplay(this.value)">
+                    <option value="1">Term 1</option>
+                    <option value="2">Term 2</option>
+                    <option value="3">Term 3</option>
+                </select>
+                <div id="gradeDisplay">
+                    <!-- Dynamic grade content will be loaded here -->
+                </div>
+                <button class="btn btn-primary" onclick="downloadPDF(document.getElementById('termSelect').value)">
+                    Download Selected Term Results
+                </button>
+            </div>
+        </div>
+        
+
+        <!-- Teachers Section -->
+        <div id="teachers" class="card mb-3" style="display: none;">
+            <div class="card-body">
+                <h5 class="card-title">Teachers</h5>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Mrs. Smith (Mathematics)</li>
+                    <li class="list-group-item">Mr. Johnson (Science)</li>
+                    <li class="list-group-item">Ms. Lee (History)</li>
+                    <li class="list-group-item">Mr. Davis (English Literature)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Performance Chart Section -->
+<div id="performanceChartSection" class="card mb-3" style="display: none;">
+    <div class="card-body">
+        <h5 class="card-title">Term Performance Chart</h5>
+        <canvas id="performanceChart"></canvas>
+    </div>
+</div>
+
+<!-- change photo section -->
+<div id="changePhoto" class="card mb-3 " style="display: none;">
+
+    <form action="" class="container my-3">
+        <div class="mb-3 " >
+            <label for="picture" class="form-label">Change Your Profile picture</label>
+            <input class="form-control" type="file" id="picture">
+          </div>
+    <button type="submit" class="btn btn-primary">Update</button>
+    </form>
+</div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.23/jspdf.plugin.autotable.min.js"></script>
+
+    <script>
+// Notification logic start
+
+
+
+
+
+// Notification Logic end
+
+
+const activeBtn = document.getElementById('activeBtn');
+
+activeBtn.addEventListener('click', () => {
+    if (activeBtn.innerHTML === 'ON') {
+        activeBtn.innerHTML = 'OFF';
+    } else {
+        activeBtn.innerHTML = 'ON';
+    }
+});
+
+
+
+
+      // Declare 'myChart' outside the function to maintain its scope across multiple calls
+let myChart = null;
+
+function drawChart() {
+    const ctx = document.getElementById('performanceChart').getContext('2d');
+
+    // Check if 'myChart' exists and destroy it if it does
+    if (myChart) {
+        myChart.destroy();
+    }
+
+    // Create a new chart instance
+    myChart = new Chart(ctx, {
+        type: 'line', // Using a line chart for term performance
+        data: {
+            labels: ['First Term', 'Second Term', 'Third Term'],
+            datasets: [{
+                label: 'Overall Score',
+                data: [85, 45, 88],
+                backgroundColor: 'rgba(54, 162, 235, 0.5)',
+                borderColor: 'rgba(54, 162, 235, 1)',
+                fill: false
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    suggestedMin: 50,
+                    suggestedMax: 100
+                }
+            }
+        }
+    });
+}
+
+
+
+function showSection(section) {
+    ['profile', 'courses', 'grades', 'teachers', 'performanceChartSection','changePhoto'].forEach(sec => {
+        document.getElementById(sec).style.display = 'none';
+    });
+    if(section === 'performanceChartSection') {
+        drawChart();
+    }
+    document.getElementById(section).style.display = 'block';
+}
+
+
+function downloadPDF(term) {
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
+    const logoUrl = './images/logo.jpg'; // URL or local path to the school logo image
+    
+
+    // Load logo asynchronously and add text after
+doc.addImage(logoUrl, 'PNG', 10, 10, 48, 24); // Position logo at the top-left
+doc.setFontSize(18);
+doc.text('Excellent Commuity School Giwa', 60, 20); // Adjust x, y to align next to the logo
+doc.setFontSize(12);
+doc.text('Student Report Card', 60, 30); // Sub-header or title
+
+doc.setFontSize(10);
+doc.text('Name: John Doe', 20, 60);
+doc.text('Class: SS3 A', 20, 70);
+doc.text('Academic Year: 2023-2024', 20, 80);
+
+
+// Columns and row data for the report card
+const columns = ["Subject", "Grade", "Comments"];
+const rows = [
+    ["Mathematics", "80%", "Excellent progress"],
+    ["Science", "42%", "Very good understanding"],
+    ["History", "85%", "Good, but more dates needed"],
+    ["English", "90%", "Outstanding in literature"]
+];
+
+doc.autoTable(columns, rows, {
+    startY: 90,
+    theme: 'grid',
+    styles: { fillColor: [149, 208, 219] }, // light blue fill
+    columnStyles: {
+        0: {cellWidth: 50},
+        1: {cellWidth: 30},
+        2: {cellWidth: 80} // Make comments column wider
+    },
+    margin: { top: 150 }
+});
+
+doc.setFontSize(10);
+doc.text('Issued by: Mr. Umar Shehu', 20, doc.internal.pageSize.height - 30);
+doc.text('Date: May 1, 2024', doc.internal.pageSize.width - 60, doc.internal.pageSize.height - 30, 'right');
+
+    // Add a slight delay to ensure image loads
+    setTimeout(() => {
+        doc.save(`term_${term}_results.pdf`);
+    }, 200);
+}
+
+
+
+// update grades
+
+function updateGradesDisplay(term) {
+    const grades = {
+        1: {'Mathematics': '88%', 'Science': '92%', 'History': '85%', 'English Literature': '90%'},
+        2: {'Mathematics': '90%', 'Science': '91%', 'History': '82%', 'English Literature': '93%'},
+        3: {'Mathematics': '87%', 'Science': '95%', 'History': '88%', 'English Literature': '89%'}
+    };
+
+    const gradeDisplay = document.getElementById('gradeDisplay');
+    gradeDisplay.innerHTML = ''; // Clear previous grades
+    Object.keys(grades[term]).forEach(subject => {
+        const p = document.createElement('p');
+        p.classList.add('card-text');
+        p.textContent = `${subject}: ${grades[term][subject]}`;
+        gradeDisplay.appendChild(p);
+    });
+}
+
+// Initialize display
+updateGradesDisplay(1); // Default to Term 1 on load
+
+
+
+
+
+    </script>
+</body>
+</html>

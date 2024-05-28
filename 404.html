@@ -7,7 +7,64 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="icon" href="./assets/images/school logo.jpg">
-    <title>Excellent community school -Gallery</title>
+    <title>404 Page Not Found</title>
+    <style>
+        body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: linear-gradient(45deg, #6a11cb, #2575fc);
+  font-family: 'Roboto', sans-serif;
+  color: white;
+}
+
+.container {
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.display-1 {
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+}
+
+.btn-primary {
+  background-color: #ff5f6d;
+  border-color: #ff5f6d;
+  animation: buttonPop 1s infinite;
+}
+
+@keyframes buttonPop {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+    </style>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -22,7 +79,7 @@
             <div class="collapse navbar-collapse " id="navbarNav">
                 <ul class="navbar-nav ms-auto me-5">
                     <li class="nav-item">
-                        <a class="nav-link " href="index.html">Home</a>
+                        <a class="nav-link" href="index.html">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="about.html">About Us</a>
@@ -32,22 +89,21 @@
                             Managements
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="staffDropdown">
-                            <li><a class="dropdown-item" href="administratives.html">Administratives</a></li>
+                            <li><a class="dropdown-item"   href="administratives.html">Administratives</a></li>
                             <li><hr class="dropdown-divider bg-primary"></li>
                             <li><a class="dropdown-item" href="staff.html">staff</a></li>
                             
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="admission.html">Admissions</a>
+                        <a class="nav-link " href="admission.html">Admissions</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page"  href="gallery.html">Gallery</a>
+                        <a class="nav-link" href="gallery.html">Gallery</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="contact.html">Contact</a>
                     </li>
-
                     <li class="nav-item">
                       <a class="btn btn-login" href="#loginModal" data-bs-toggle="modal">Login</a>
                   </li>
@@ -57,14 +113,11 @@
         </div>
     </nav>
 
-    <!-- news sticker -->
-<div class="newsSticker container-fluid" id="newsSticker">
-    latest news: registration is now open for new students...
-</div>
+ 
 
     <!--END OF THE NAVIGATION BAR   -->
 
-
+    
   <!-- Login Modal -->
   <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -99,68 +152,19 @@
 </div>
 
 
-    <section class="bg-dark text-center text-light d-flex justify-content-center align-items-center " style="height: 60vh; width: 100%;">
-        <div class="contaier">
-            <h1 class="fw-4">
-                Our Galleries/
-            </h1>
-        </div>
-       
-    </section>
+<div class="container d-flex flex-column align-items-center justify-content-center vh-100 text-center">
+    <h1 class="display-1 fw-bold">404</h1>
+    <p class="lead">Oops! The page you are looking for doesn't exist.</p>
+    <a href="index.html" class="btn btn-primary">Go Home</a>
+  </div>
     
 <!-- hero end -->
 
 
+
+
 <button id="backToTopBtn" >Back to Top</button>
-   
-<div class="gallery container my-5">
 
-    <div class="image-container" id="container1  ">
-        <a href="#image1"><img src="./assets/images/pic (1).jpeg" alt="" title="click for full view"></a>
-    </div>
-
-    <div class="image-container" id="container1">
-        <a href="#image2"><img src="./assets/images/pic (8).jpeg" alt="" title="click for full view"></a>
-    </div>
-    <div class="image-container" id="container1 ">
-        <a href="#image3"><img src="./assets/images/pic (6).jpeg" alt="" title="click for full view"></a>
-    </div>
-    <div class="image-container" id="container1 ">
-        <a href="#image4"><img src="./assets/images/pic (7).jpeg" alt="" title="click for full view"></a>
-    </div>
-</div>
-
-
-<div class="lightbox" id="image1">
-    <a href="#" class="close">CLOSE</a>
-    <div class="lightbox-content">
-        <img src="./assets/images/pic (1).jpeg" alt="">
-    </div>
-</div>
-
-
-<div class="lightbox" id="image2">
-    <a href="#" class="close">CLOSE</a>
-    <div class="lightbox-content">
-        <img src="./assets/images/pic (8).jpeg" alt="">
-    </div>
-</div>
-
-
-<div class="lightbox" id="image3">
-    <a href="#" class="close">CLOSE</a>
-    <div class="lightbox-content">
-        <img src="./assets/images/pic (6).jpeg" alt="">
-    </div>
-</div>
-
-
-<div class="lightbox" id="image4">
-    <a href="#" class="close">CLOSE</a>
-    <div class="lightbox-content">
-        <img src="./assets/images/pic (7).jpeg" alt="">
-    </div>
-</div>
     <!-- FOOTER SECTION -->
 
 <!-- Footer -->

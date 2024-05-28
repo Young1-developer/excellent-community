@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+   <!-- Option 1: Include in HTML -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+
+  <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark position-fixed " style="width: 100%; top: 0; height: auto; z-index: 1; place-items: center;">
+        <div class="container-fluid">
+          <button class="navbar-toggler me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          
+
+          <a class="navbar-brand  fw-bold text-uppercase me-auto" href="#">Excellent Community School Giwa</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+           
+            <div class="d-flex  ms-auto">
+        <a href="#notification">
+              <span class="bg-light mx-1  p-1 rounded-circle" style="margin: 30px;">
+                  <i class="bi bi-bell-fill"></i>
+              </span>
+            </a>
+          </div>
+
+            <li class="nav-item dropdown ">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="bi bi-person-circle fs-5"></i>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                  <li class="nav-item"><a class="dropdown-item" href="myProfile.html">my profile</a></li>
+                  <li class="nav-item"><a class="dropdown-item" href="setting.html">settings</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li class="nav-item"><a class="dropdown-item" href="#">Logout</a></li>
+                </ul>
+              </li>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Navbar -->
+
+
+      
+      <!-- Notification  -->
+      <div class="Notification-container" >
+            
+        <div class="notification-content card ">
+            <div id="notification" class="notification">
+                <a href="#" class="close-notification">Close</a>
+                <div class="notification-subPage">
+                    <i class="bi bi-bell-fill"></i>
+                    <h2>Notifications</h2>
+                    <h3>Notification header here..</h3>
+                    <p>Here are your notifications...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+      <!-- Notification -->
+      <!-- offCanvase -->
+    
+     
+      <div class="offcanvas offcanvas-start bg-dark text-white sidebar-nav " data-bs-backdrop="false" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasExampleLabel">Teacher Dashboard</h5>
+          <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+         <nav class="navbar-dark">
+          <ul class="navbar-nav">
+            <li>
+              <div class="text-muted fw-bold small text-uppercase px-2">
+              infor
+              </div>
+            </li>
+            <li class="nav-item">
+           <a class="nav-link active" href="">
+            <span class="me-2">
+              <i class="bi bi-speedometer2"></i>
+            </span>
+            <span>Dashboard</span>
+           </a>
+            </li>
+            <hr class="dropdown-divider my-4">
+            <li>
+              <div class="text-muted fw-bold small text-uppercase px-2">
+              pages
+              </div>
+            </li>
+            <li >
+              <a class="nav-link px-3 sidebar-link" 
+              data-bs-toggle="collapse" 
+              href="#collapseExample" role="button"
+               aria-expanded="false" aria-controls="collapseExample">
+                <span class="me-2">
+                 <i class="bi bi-people-fill"></i>
+                </span>
+                <span>Classes</span>
+                <span class="right-icon ms-auto">
+                  <i class="bi bi-chevron-down"></i>
+                </span>
+              </a>
+              <div class="collapse" id="collapseExample">
+                <div class="card card-body">
+                  <div class="dropdown my-2">  <!-- class 1  -->
+                    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                      SS3 class
+                    </a>
+                  
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                      <li><a class="dropdown-item" href="#!" onclick="showSection('classes') ">SS3A</a></li>
+                      <li><a class="dropdown-item" href="#">SS3B</a></li>
+                      <li><a class="dropdown-item" href="#">SS3C</a></li>
+                    </ul>
+                  </div>
+
+                  <div class="dropdown my-2">  <!-- class 2  -->
+                    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                      SS2 class
+                    </a>
+                  
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                      <li><a class="dropdown-item" href="#">SS2A</a></li>
+                      <li><a class="dropdown-item" href="#">SS2B</a></li>
+                      <li><a class="dropdown-item" href="#">SS2C</a></li>
+                    </ul>
+                  </div>
+
+                  <div class="dropdown my-2">  <!-- class 3  -->
+                    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                      SS1 class
+                    </a>
+                  
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                      <li><a class="dropdown-item" href="#">SS1A</a></li>
+                      <li><a class="dropdown-item" href="#">SS1B</a></li>
+                      <li><a class="dropdown-item" href="#">SS1C</a></li>
+                    </ul>
+                  </div>
+
+                </div>
+              </div>
+               </li>
+               <li class="nav-item">
+              <a href="setting.html" class="nav-link px-3">
+                <span class="me-2">
+                <i class="bi bi-gear-fill"></i>
+                </span>
+                <span>Settings</span>
+                
+              </a>
+               </li>
+          </ul>
+
+         </nav>
+        </div>
+      </div>
+      <!-- offCanvase -->
+
+
+      <!-- main section -->
+
+
+<main class="mt-5 p-3">
+  <div class="container mx-auto my-5">
+
+
+    <div id="dashboard">
+
+      <h3 class="text-muted my-2 ">Recently entered classes</h3>
+      <div class="row g-3">
+       <div class="col-md-3"> <!-- col 1-->
+         <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+           <div class="card-header">10m ago</div>
+           <div class="card-body">
+             <h5 class="card-title">SS3A</h5>
+             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+           </div>
+         </div>
+       </div>
+     
+       <div class="col-md-3"> <!-- col 2-->
+         <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
+           <div class="card-header">30m ago</div>
+           <div class="card-body">
+             <h5 class="card-title">SS3B</h5>
+             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+           </div>
+         </div>
+       </div>
+     
+       <div class="col-md-3"> <!-- col 3-->
+         <div class="card text-white bg-success mb-3" style="max-width: 18rem;">
+           <div class="card-header">50m ago</div>
+           <div class="card-body">
+             <h5 class="card-title">SS3C</h5>
+             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+           </div>
+         </div>
+       </div>
+     
+       <div class="col-md-3"> <!-- col 4-->
+         <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+           <div class="card-header">2hr ago</div>
+           <div class="card-body">
+             <h5 class="card-title">SS1B</h5>
+             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+           </div>
+         </div>
+       </div>
+     
+     
+      </div>
+  
+    </div>
+  
+    <!--  classes -->
+   
+<div class="container mt-3">
+  <div class="card mb-3">
+    <div class="card-body">
+      <h5 class="card-title">SS3A students</h5>
+      <div class="form-row mb-3">
+        <div class="col">
+          <select id="subjectDropdown" class="form-control">
+            <option selected disabled>Select Subject</option>
+            <option value="math">Math</option>
+            <option value="science">Science</option>
+            <option value="history">History</option>
+          </select>
+        </div>
+        <div class="col">
+          <select id="testDropdown" class="form-control">
+            <option selected disabled>Select Test Type</option>
+            <option value="first">First Test</option>
+            <option value="second">Second Test</option>
+            <option value="exam">Exam</option>
+          </select>
+        </div>
+      </div>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Profile</th>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">Handle</th>
+            <th scope="col">Score</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td><img src="images/myProfile.avif" width="30" height="30" class="rounded-circle" alt=""></td>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+            <td><input type="text" class="form-control form-control-sm" placeholder="Score"></td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td><img src="images/myProfile.avif" width="30" height="30" class="rounded-circle" alt=""></td>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+            <td><input type="text" class="form-control form-control-sm" placeholder="Score"></td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td><img src="images/myProfile.avif" width="30" height="30" class="rounded-circle" alt=""></td>
+            <td colspan="2">Larry the Bird</td>
+            <td>@twitter</td>
+            <td><input type="text" class="form-control form-control-sm" placeholder="Score"></td>
+          </tr>
+        </tbody>
+      </table>
+      <button class="btn btn-primary" onclick="submitScores()">Submit</button>
+    </div>
+  </div>
+</div>
+  </div>
+
+  </div>
+
+
+
+</main>
+
+
+      <!-- main section -->
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

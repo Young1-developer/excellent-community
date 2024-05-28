@@ -211,3 +211,26 @@
     opacity: 1; /* fully opaque when in view */
 }
 
+  /* General styles for the login button */
+  .btn-login {
+    background-color: #007bff;
+    color: white;
+    border-radius: 25px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect */
+.btn-login:hover {
+    background-color: #0056b3;
+    box-shadow: 0 4px 8px rgba(0, 91, 187, 0.2);
+    color: white;
+}
+
+/* Active effect */
+.btn-login:active {
+    background-color: #004494;
+    box-shadow: 0 2px 4px rgba(0, 91, 187, 0.2);
+}
+
