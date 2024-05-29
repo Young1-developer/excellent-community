@@ -33,22 +33,22 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#!" onclick="showSection('profile')">Profile</a>
+                        <a class="nav-link "  href="#!" onclick="setActive(this),  showSection('profile')">Profile</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#!" onclick="showSection('courses')">Courses</a>
+                        <a class="nav-link" href="#!" onclick="setActive(this), showSection('courses')">Courses</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#!" onclick="showSection('grades')">Grades</a>
+                        <a class="nav-link" href="#!" onclick="setActive(this), showSection('grades')">Grades</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#!" onclick="showSection('teachers')">Teachers</a>
+                        <a class="nav-link" href="#!" onclick="setActive(this), showSection('teachers')">Teachers</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#!" onclick="showSection('performanceChartSection')">Performance</a>
+                        <a class="nav-link" href="#!" onclick="setActive(this), showSection('performanceChartSection')">Performance</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#!" onclick="showSection('changePhoto')">Change Photo</a>
+                        <a class="nav-link" href="#!" onclick="setActive(this), showSection('changePhoto')">Change Photo</a>
                     </li>
                 </ul>
                 <div class="d-flex">
@@ -172,13 +172,23 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.23/jspdf.plugin.autotable.min.js"></script>
 
     <script>
-// Notification logic start
+// Nav-link logic start
+
+function setActive(element){
+    const Nav_link = document.querySelectorAll('.nav-link');
+
+    Nav_link.forEach((nav) => {
+        nav.classList.remove('active');
+    })
+
+    element.classList.add('active');
+
+}
 
 
 
 
-
-// Notification Logic end
+// Nav-link Logic end
 
 
 const activeBtn = document.getElementById('activeBtn');
