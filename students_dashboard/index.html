@@ -23,50 +23,50 @@
     </style>
 </head>
 <body>
-    <div class="container-fluid ">
-        <div class="row">
-            <div class="col-12">
-                <h1>Excellent Community School Student Dashboard</h1>
-                <button class="btn btn-dark">Back to main site</button>
-                <nav class="navbar my-3 navbar-dark bg-dark  d-flex justify-content-between">
-                    <ul class="nav  d-flex justify-content-between">
-                       <li class="nav-item">
+    
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#!">Excellent Community School Student Dashboard</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="#!" onclick="showSection('profile')">Profile</a>
-                       </li> 
-                     <li class="nav-item">
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="#!" onclick="showSection('courses')">Courses</a>
-                     </li>
-                      <li class="nav-item">
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="#!" onclick="showSection('grades')">Grades</a>
-                      </li>
-                     <li class="nav-item">
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="#!" onclick="showSection('teachers')">Teachers</a>
-                     </li>
-                   <li class="nav-item">
-                    <a class="nav-link" href="#!" onclick="showSection('performanceChartSection')">Performance</a>
-                   </li>
-
-                </li>
-                <li class="nav-item">
-                 <a class="nav-link" href="#!" onclick="showSection('changePhoto')">Change Photo</a>
-                </li>
-
-                    </ul>
-                  <div>
-                    <div class="me-4 Notification" >
-                        <a href="#notification">
-                        <span class="bg-light mx-1 p-1 rounded-circle" id="Notification-icon">
-                            <i class="bi bi-bell-fill"></i>
-                        </span>
-                    </a>
-                       
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#!" onclick="showSection('performanceChartSection')">Performance</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#!" onclick="showSection('changePhoto')">Change Photo</a>
+                    </li>
+                </ul>
+                <div class="d-flex">
+                    <div class="me-4 my-3 Notification">
+                        <a href="#notification" >
+                            <span class="bg-light mx-1  p-1 rounded-circle" id="Notification-icon">
+                                <i class="bi bi-bell-fill"></i>
+                            </span>
+                        </a>
                     </div>
-                  </div>
-                </nav>
+                    <button class="btn btn-sm"><a href="../index.html" class="nav-link">Back to main site</a></button>
+                </div>
             </div>
         </div>
+    </nav>
+    
 
-        <div class="Notification-container" >
+        <div class="Notification-container my-5" >
             
             <div class="notification-content card ">
                 <div id="notification" class="notification">
@@ -82,7 +82,7 @@
         </div>
 
         <!-- Profile Section -->
-        <div id="profile" class="card mb-3">
+        <div id="profile" class="card mb-3 my-5">
             <div class="row g-0">
                 <div class="col-md-4">
                     <img src="images/myProfile.avif" class="img-fluid rounded-start avatar" alt="Student Avatar">
@@ -101,7 +101,7 @@
         </div>
 
         <!-- Courses Section -->
-        <div id="courses" class="card mb-3" style="display: none;">
+        <div id="courses" class="card mb-3 my-5" style="display: none;">
             <div class="card-body">
                 <h5 class="card-title">Courses</h5>
                 <ul class="list-group list-group-flush">
@@ -114,7 +114,7 @@
         </div>
 
         <!-- Grades Section -->
-        <div id="grades" class="card mb-3" style="display: none;">
+        <div id="grades" class="card mb-3 my-5" style="display: none;">
             <div class="card-body">
                 <h5 class="card-title">Recent Grades</h5>
                 <select id="termSelect" onchange="updateGradesDisplay(this.value)">
@@ -133,7 +133,7 @@
         
 
         <!-- Teachers Section -->
-        <div id="teachers" class="card mb-3" style="display: none;">
+        <div id="teachers" class="card mb-3 my-5" style="display: none;">
             <div class="card-body">
                 <h5 class="card-title">Teachers</h5>
                 <ul class="list-group list-group-flush">
@@ -147,7 +147,7 @@
     </div>
 
     <!-- Performance Chart Section -->
-<div id="performanceChartSection" class="card mb-3" style="display: none;">
+<div id="performanceChartSection" class="card mb-3 my-5" style="display: none;">
     <div class="card-body">
         <h5 class="card-title">Term Performance Chart</h5>
         <canvas id="performanceChart"></canvas>
@@ -155,7 +155,7 @@
 </div>
 
 <!-- change photo section -->
-<div id="changePhoto" class="card mb-3 " style="display: none;">
+<div id="changePhoto" class="card mb-3 my-5 " style="display: none;">
 
     <form action="" class="container my-3">
         <div class="mb-3 " >
